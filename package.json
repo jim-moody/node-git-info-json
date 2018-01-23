@@ -1,0 +1,27 @@
+{
+  "name": "node-git-info-json",
+  "version": "0.1.0",
+  "main": "dist/node-git-info-json.cjs.js",
+  "module": "dist/node-git-info-json.esm.js",
+  "bin": {
+    "node-git-info-json": "bin/node-git-info-json"
+  },
+  "dependencies": {
+    "child-process-promise": "2.2.0",
+    "command-line-args": "3.0.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "rollup": "^0.50.0",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-sizes": "^0.4.2"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "node test/test.js",
+    "pretest": "npm run build"
+  },
+  "files": ["dist", "bin"]
+}
