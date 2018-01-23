@@ -1,6 +1,11 @@
 {
   "name": "node-git-info-json",
   "version": "0.1.0",
+  "homepage": "https://github.com/jim-moody/node-git-info-json",
+  "repository": {
+    "url": "https://github.com/jim-moody/node-git-info-json"
+  },
+  "author": "Jim Moody <jimsmoody@gmail.com>",
   "main": "dist/node-git-info-json.cjs.js",
   "module": "dist/node-git-info-json.esm.js",
   "bin": {
