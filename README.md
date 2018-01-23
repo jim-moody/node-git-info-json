@@ -8,7 +8,7 @@ Basically a fork from the [node-git-info](https://www.npmjs.com/package/node-git
 
 ```sh
 npm i -g node-git-info-json
-node-git-info [options]
+node-git-info-json [options]
 
 -d, --directory # Directory to save the file to, default is the cwd
 ```
