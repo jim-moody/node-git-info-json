@@ -7,6 +7,7 @@ const execute = () => {
   const optionDefinitions = [
     { name: "directory", alias: "d", type: String },
     { name: "filename", alias: "f", type: String },
+    { name: "extra", alias: "e", type: String }
   ];
 
   // convert command line arguments to object

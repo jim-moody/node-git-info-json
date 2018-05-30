@@ -13,6 +13,8 @@ npm i -g node-git-info-json
 node-git-info-json [options]
 
 -d, --directory # Directory to save the file to, default is the cwd
+-f, --filename # Filename, default is git.properties.json
+-e, --extra # Extra json to append to the generated file
 ```
 
 ### Project Level
@@ -45,6 +47,41 @@ npm run git-info
 
 ```json
 {
+  "buildTime": "Wed, 30 May 2018 09:54:53 GMT",
+  "git": {
+    "commit": {
+      "message": {
+        "full": "fake commit",
+        "short": "fake commit"
+      },
+      "time": "Tue Jan 23 2018 15:46:45 GMT-0500 (EST)",
+      "id": "af1fe75e2df23d1e93e884c6018d6f23dfee19c4",
+      "abbrevId": "af1fe75",
+      "user": {
+        "email": "jimsmoody@gmail.com",
+        "name": "JIM MOODY"
+      }
+    },
+    "branch": "master"
+  }
+}
+```
+
+## Full example
+
+```sh
+mkdir dist
+npx node-git-info-json -d dist -f info.json -e '{"version": "1.2.3"}'
+```
+
+## Full Sample Output
+
+`git.properties.json`
+
+```json
+{
+  "version" : "1.2.3",
+  "buildTime": "Wed, 30 May 2018 09:54:53 GMT",
   "git": {
     "commit": {
       "message": {
