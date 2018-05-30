@@ -21,10 +21,13 @@ export const write = ({directory, filename, extra}) => {
 
     let extraData = {}
 
-    try {
-      extraData = JSON.parse(extra);
-    } catch(e) {
-      console.log('error', extra);
+    if (extra) {
+      try {
+        extraData = JSON.parse(extra);
+      } catch(e) {
+        console.log('[node-git-info][ERROR] Error during parse extra param :', extra);
+        reject();
+      }
     }
 
     // will be the current working directory of the Node.js process.
