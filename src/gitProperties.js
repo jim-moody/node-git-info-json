@@ -14,9 +14,10 @@ import {
  * @param callback  Function to call when git.properties file has been written or when an error doing so occurs.
  */
 
-export const write = destinationPath => {
+export const write = ({directory, filename}) => {
   return new Promise((resolve, reject) => {
-    destinationPath = destinationPath || process.cwd(); // default location for saving the git.properties file
+    const destinationPath = directory || process.cwd(); // default location for saving the git.properties file
+    filename = filename || 'git.properties.json'; 
     // will be the current working directory of the Node.js process.
 
     const gitPromises = [
@@ -40,6 +41,7 @@ export const write = destinationPath => {
         commitTime
       ]) => {
         const gitProperties = {
+          buildTime: new Date().toUTCString(),
           git: {
             commit: {
               message: {
@@ -65,19 +67,19 @@ export const write = destinationPath => {
 
         // Generate git.properties.json file
         fs.writeFile(
-          destinationPathCleaned + "git.properties.json",
+          destinationPathCleaned + filename,
           gitPropertiesFormatted,
           err => {
             if (err) {
               // error has occured saving git.properties
               console.log(
-                "[node-git-info][ERROR]: can't create git.properties.json file."
+                "[node-git-info][ERROR]: can't create " + filename + " file."
               );
               reject();
             } else {
               // saving git.properties was a success
               console.log(
-                "[node-git-info] git.properties.json has successfully created."
+                "[node-git-info] " + filename + " has successfully created."
               );
               resolve();
             }
