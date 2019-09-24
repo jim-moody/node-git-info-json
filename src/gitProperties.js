@@ -25,7 +25,7 @@ export const write = ({directory, filename, extra}) => {
       try {
         extraData = JSON.parse(extra);
       } catch(e) {
-        console.log('[node-git-info][ERROR] Error during parse extra param :', extra);
+        console.log('[node-git-info-json-extra][ERROR] Error during parse extra param :', extra);
         reject();
       }
     }
