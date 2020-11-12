@@ -1,21 +1,22 @@
 {
-  "name": "node-git-info-json",
-  "version": "0.1.1",
-  "homepage": "https://github.com/jim-moody/node-git-info-json",
+  "name": "node-git-info-json-extra",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Reeska/node-git-info-json",
   "repository": {
-    "url": "https://github.com/jim-moody/node-git-info-json"
+    "url": "https://github.com/Reeska/node-git-info-json"
   },
   "author": "Jim Moody <jimsmoody@gmail.com>",
-  "main": "dist/node-git-info-json.cjs.js",
-  "module": "dist/node-git-info-json.esm.js",
+  "main": "dist/node-git-info-json-extra.cjs.js",
+  "module": "dist/node-git-info-json-extra.esm.js",
   "bin": {
-    "node-git-info-json": "bin/node-git-info-json"
+    "node-git-info-json-extra": "bin/node-git-info-json-extra"
   },
   "dependencies": {
     "child-process-promise": "2.2.0",
     "command-line-args": "3.0.3"
   },
   "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "rollup": "^0.50.0",
@@ -28,5 +29,8 @@
     "test": "node test/test.js",
     "pretest": "npm run build"
   },
-  "files": ["dist", "bin"]
+  "files": [
+    "dist",
+    "bin"
+  ]
 }
